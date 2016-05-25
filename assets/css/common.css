@@ -1,0 +1,720 @@
+/**
+* @style       Standard Layout
+* @media       screen
+* @version     1.0
+* @author      Alfredo Zym
+* @copyright   OrvelSoft 2017
+* @licensor   	open source
+* @layout      in pixels:
+*              |            788            |
+*              | 10  |      768       | 10 |
+*              | 10  | 27 |    741    | 10 |
+*/
+
+
+body{
+	background:#FFFFFF;
+}
+
+
+/**
+* @section nav
+* @todo mene principal de la pagina
+*/
+nav{
+	position:relative;
+	float:left;
+	background:#3a2313;
+	width:100%;
+	height:100px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	width:65%;
+	margin-left:17.5%;
+	float:left;
+	text-align:center;
+	height:100px;
+	padding-right:0;
+	margin-right:0;
+	background-color:#405964;
+	display:table;
+}
+
+nav ul li {
+    
+	background:none;
+	cursor:pointer;
+	width:16.67%;
+	/*height:100px;*/
+	background:#442467;
+	display: table-cell;
+	vertical-align: middle;
+	padding:0;
+}
+
+nav ul li a {
+	
+	color:#FFFFFF;
+	background:none;
+	font-size: 1.1rem;
+    font-weight: bold;
+	padding: 10px 5px;
+	/*margin:20px 0px;*/
+	/*margin-bottom:17px;*/
+	border-right:1px solid #FFFFFF;
+	background:#892135;
+	width:100%;
+}
+
+nav ul li a.double {
+	margin-top:17px;
+	padding-bottom:0px;
+}
+
+nav ul li:hover {
+	background:#f29b31;
+}
+
+nav ul li.active {
+	background:#f29b31;
+}
+
+nav ul li.active a {
+	background:#f29b31;
+	border:none;
+}
+
+nav ul li a.noBorder {
+	border:none;
+}
+
+nav ul li:last-child a {
+	border:none;
+}
+
+nav ul li:hover a {
+	border:none;
+}
+
+.circle {
+	position:absolute;
+	left:45.3%;
+	top:70px;
+	width: 126px;
+	width: 126px;
+	height: 75px;
+	background: #3a2313;
+	-moz-border-radius: 0 0 126px 126px;
+	-webkit-border-radius: 0 0 126px 126px;
+	border-radius: 0 0 126px 126px;
+	/*margin-top:40px;*/
+}
+
+nav a.register{
+	background:#f29b31;
+	float:right;
+	width:17.5%;
+	height:100%;
+	color:#FFFFFF;
+	font-size:1.4rem;
+	font-weight: bold;
+	padding: 18px 20px;
+	text-align:center;
+	cursor:pointer;
+}
+
+a:hover {
+	text-decoration: none;
+	color:#FFFFFF;
+} 
+
+nav a.btnMenu{
+	display:none;
+}
+
+/**
+* @section nav medias query table
+* @todo estilos para el menu en las tabletas
+*/
+@media (min-width: 768px  ) and (max-width: 1199px){
+	
+	nav ul {
+		width:80%;
+		margin-left:0;
+	}
+	
+	nav ul li {
+		width:16.66%;
+	}
+	
+	nav a.register{
+		width:20%;
+		padding: 16px 15px;
+	}
+	
+	nav ul li a.noBorder {
+		border-right:1px solid #FFFFFF;
+	}
+	
+	nav ul li:last-child a {
+		border:none;
+	}
+	
+	nav a.btnMenu{
+		display:none;
+	}
+	
+	#divCircle{
+		display:none;
+	}
+}
+
+/**
+* @section nav medias query phone
+* @todo estilos para el menu en laos telefonos
+*/
+@media (max-width: 767px){
+	
+	nav{
+		height:50px;
+	}
+	
+	nav a.register{
+		float:right;
+		width:70%;
+		font-size:1.1rem;
+		font-weight: normal;
+		padding: 10px 10px;
+	}
+	
+	nav a.btnMenu{
+		position:relative;
+		float:left;
+		background:#f29b31;
+		display:inline;
+		color:#FFFFFF;
+		font-size:3rem;
+		padding: 2px 16px;
+		border: 2px solid #d98b2c;
+		cursor:pointer;
+	}
+	
+	nav a.btnMenu:active{
+		background:#c17c27;
+	}
+	
+	nav ul.nav-content{
+		display:none;
+		width: 80%;
+		height:auto;
+		margin: 0;
+		padding: 0;
+		position:absolute;
+		top:50px;
+		left:0;
+		z-index:10;
+		background:#3a2313;
+	}
+	
+	#divCircle{
+		display:none;
+	}
+	
+	nav ul li {
+		float: left;
+		background:none;
+		cursor:pointer;
+		width:100%;
+		height:auto;
+		 border-bottom: 1px solid #f29b31;
+	}
+	
+	av ul li:last-child {
+		border-bottom: none;
+	}
+
+	nav ul li a {
+		font-weight: bold;
+		padding: 12px 5px;
+		margin:0;
+		border-right:1px solid #FFFFFF;
+		border:none;
+	}
+	
+}
+
+/**
+* @section camps
+* @todo section que muestra el info del campamento
+*/
+
+.row {
+    margin-right: 0;
+    margin-left: -15px;
+}
+
+#camps{
+	position:relative;
+	float:left;
+	margin-top:-50px;
+	margin-bottom:50px;
+}
+
+.camps-content{
+	padding-right:0px;
+}
+
+.campsHeader{
+	position:relative;
+	float:left;
+	width:100%;
+	background:#68c62a;
+	text-align:center;
+	font-size:1.7rem;
+	color:#FFFFFF;
+	height:100px;
+	display: table;
+	padding: 0px 5px;
+	text-transform:uppercase;
+}
+
+.labelCampsHeader{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.campsImages{
+	position:relative;
+	float:left;
+	width:100%;
+	height:auto;
+}
+
+.campsImages img{
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+@media (max-width: 767px){
+	
+	.campsHeader{
+		height:60px;
+	}
+	
+	#camps{
+		position:relative;
+		float:left;
+		margin-top:0;
+		margin-bottom:5px;
+	}
+	
+}
+
+/**
+* @section About Us
+* @todo section que muestra la informacion de la empresa
+*/
+
+#AboutUs{
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+.bgAboutUs{
+	background:#3a2313;
+	color:#FFFFFF;
+	padding: 20px 0;
+	text-decoration: underline;
+}
+
+.aboutUs-header{
+	text-align:center;
+	text-transform:uppercase;
+	font-size:4rem;
+	color:#f29b31;
+	margin-bottom: 25px;
+}
+
+.aboutUs-header label{
+	border-bottom:2px solid #FFFFFF;
+}
+
+.aboutUs-body{
+	margin-bottom: 25px;
+}
+
+.aboutUs-body label{
+	position:relative;
+	text-transform:uppercase;
+	font-size:2rem;
+	color:#f29b31;
+	text-align:center;
+}
+
+.aboutUs-body p{
+	color:#FFFFFF;
+	text-align:center;
+	
+}
+
+.aboutUs-body.UsLeft{
+	padding-right:50px;
+}
+
+.aboutUs-body.UsRight{
+	padding-left:50px;
+}
+
+.aboutUs-body.UsLeft:first-child{
+	margin-bottom:75px;
+}
+
+.aboutUs-body.UsLeft label, .aboutUs-body.UsLeft p{
+	float:right;
+	width:58%;
+}
+
+.aboutUs-body.UsRight label, .aboutUs-body.UsRight p{
+	float:left;
+	width:70%;
+}
+
+@media (min-width: 768px  ) and (max-width: 1199px){
+	
+	.aboutUs-body.UsLeft{
+		padding-right:10px;
+	}
+	
+	.aboutUs-body.UsRight{
+		padding-left:10px;
+	}
+	
+	.aboutUs-body.UsLeft label, .aboutUs-body.UsLeft p{
+		float:right;
+		width:90%;
+	}
+	
+	.aboutUs-body.UsRight label, .aboutUs-body.UsRight p{
+		float:left;
+		width:95%;
+	}
+	
+	.aboutUs-body.UsLeft p{
+		text-align:right;
+	}
+	
+	.aboutUs-body.UsRight p{
+		text-align:left;
+	}
+}
+
+/**
+* @section quienes somos medias query phone
+* @todo estilos para el menu en laos telefonos
+*/
+@media (max-width: 767px){
+	
+	.aboutUs-header{
+		font-size:3rem;
+	}
+	
+	.aboutUs-body.UsLeft, .aboutUs-body.UsRight{
+		padding:0;
+		padding-left:25px;
+	}
+	
+	.aboutUs-body.UsLeft label, .aboutUs-body.UsLeft p{
+		float:left;
+		width:100%;
+		text-align:center;
+	}
+	
+	.aboutUs-body.UsRight label, .aboutUs-body.UsRight p{
+		float:left;
+		width:100%;
+		text-align:center;
+	}
+	
+	.aboutUs-body.UsLeft:first-child{
+		margin-bottom:16px;
+	}
+	
+}
+
+/**
+* @section gallery
+* @todo section galerria de los campamentos
+*/
+
+#galleryCamp{
+	position:relative;
+	float:left;
+	width:100%;
+	height:100%;
+}
+
+.gallery-header{
+	text-align:center;
+	text-transform:uppercase;
+	font-size:4rem;
+	color:#f29b31;
+	padding: 25px 0px;
+}
+
+.gallery-body{
+	position:relative;
+	float:left;
+	color:#000000;
+	padding-right:0;
+	margin-right:0;
+}
+
+.galleryContent{
+	text-align:center;
+}
+
+.galleryContent:first-child{
+	background: url(../images/gallery/gallery1.jpg) center center no-repeat;
+	background-size:100%;
+}
+
+.galleryContent:last-child{
+	background: url(../images/gallery/gallery2.jpg) center center no-repeat;
+	background-size:100%;
+	
+}
+
+.galleryCircle {
+    width: 250px;
+    height: 250px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #f29b31;
+	margin: 70px auto;
+	text-align:center;
+	text-transform:uppercase;
+	font-size:2.6rem;
+	color:#FFFFFF;
+}
+
+.galleryCircle p{
+	padding-top:100px;
+}
+
+/**
+* @section CONTACTO
+* @todo section CONTACTO de los campamentos
+*/
+
+#contactCamp, #contact-map{
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+.contact-body{
+	background:#3a2313;
+	color:#FFFFFF;
+	padding: 20px 0;
+}
+
+.contactInfo{
+	text-align:center;
+}
+
+.contactInfo:first-child{
+	padding-right:50px;
+}
+
+.contactInfo:last-child{
+	padding-left:50px;
+}
+
+.contactInfo:first-child p{
+	position:relative;
+	float:right;
+}
+
+.contactInfo:last-child p{
+	position:relative;
+	float:left;
+}
+
+#formContactCamp{
+	margin-top:50px;
+	margin-left:8%;
+	margin-right:25%;
+}
+
+.form-contact{
+	display: block;
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #FFFFFF;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #f29b31;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+textarea.form-contact {
+    height: auto;
+}
+
+.form-contact::-webkit-input-placeholder{
+	color:#FFFFFF;
+}
+
+.btn-contact{
+	border-radius:0px;
+	background:#f29b31;
+	color:#FFFFFF;
+}
+
+
+/**
+* @section map
+**/
+
+#map{
+	height:440px;
+	margin-top:25px;
+	margin-left:50px;
+}
+
+
+@media (min-width: 768px  ) and (max-width: 1199px){
+	
+	.galleryCircle {
+		width: 200px;
+		height: 200px;
+		margin: 35px auto;
+		font-size:2rem;
+	}
+	
+	.galleryCircle p{
+		padding-top:85px;
+	}
+	
+	#formContactCamp{
+		margin-left:16px;
+		margin-right:16px;
+	}
+	
+	
+}
+
+@media (min-width: 481px ) and (max-width: 767px){
+	.galleryCircle {
+		width: 200px;
+		height: 200px;
+		margin: 35px auto;
+		font-size:2rem;
+	}
+	
+	.galleryCircle p{
+		padding-top:85px;
+	}
+	
+	.contactInfo:first-child{
+		padding-left:50px;
+		text-align:center;
+	}
+
+	.contactInfo:last-child{
+		padding-left:50px;
+		text-align:center;
+	}
+
+	.contactInfo:first-child p{
+		width:100%;
+		position:relative;
+		float:left;
+	}
+
+	.contactInfo:last-child p{
+		width:100%;
+		position:relative;
+		float:left;
+	}
+	
+	#map{
+		height:300px;
+		margin-left:26px;
+	}
+	
+	#formContactCamp{
+		margin-right:0;
+		margin-left:26px;
+	}
+	
+}
+	
+
+@media (max-width: 480px){
+	
+	.galleryCircle {
+		width: 150px;
+		height: 150px;
+		margin: 25px auto;
+		font-size:1.5rem;
+	}
+	
+	.galleryCircle p{
+		padding-top:60px;
+	}
+	
+	.contactInfo:first-child{
+		padding-left:50px;
+		text-align:center;
+	}
+
+	.contactInfo:last-child{
+		padding-left:50px;
+		text-align:center;
+	}
+
+	.contactInfo:first-child p{
+		width:100%;
+		position:relative;
+		float:left;
+	}
+
+	.contactInfo:last-child p{
+		width:100%;
+		position:relative;
+		float:left;
+	}
+	
+	#map{
+		height:200px;
+		margin-left:26px;
+	}
+	
+	#formContactCamp{
+		margin-right:0;
+		margin-left:26px;
+	}
+	
+}
+
+
+
+
+
+
