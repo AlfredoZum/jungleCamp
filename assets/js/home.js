@@ -6,6 +6,22 @@
 * @copyright OrvelSoft 2017
 */
 
+$('#aaa').click(function(){
+	console.log(23232)
+	$('#myModal').modal("show")
+});
+
+
+$('#myModal').on('shown.bs.modal', function () {
+  console.log("asdsda")
+})
+
+
+
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
 
 /**
 * @todo funcionalidad del mapa
@@ -31,5 +47,5 @@ function initMap() {
 }
 
 $(document).ready(function(){
-	initMap();
+	//initMap();
 })

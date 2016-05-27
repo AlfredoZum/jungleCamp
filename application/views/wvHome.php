@@ -17,14 +17,23 @@
 		<nav>
 			<ul class="nav-content">
 				<li class="active"><a >CAMPAMENTOS</a></li>
-				<li><a class="">¿QUIENES SOMOS?</a></li>
-				<li><a class="noBorder">GALERIA</a></li>
-				<li id="divCircle"></li>
-				<li><a>PAQUETES</a></li>
-				<li><a class="noBorder">CONTACTOS</a></li>
+				<li class="btnMenu"><a class="">¿QUIENES SOMOS?</a></li>
+				<li class="btnMenu"><a class="">GALERIA</a></li>
+				<li id="divCircle"><img class="img-responsive" alt="jungle_camp_logo" src="<?php echo base_url(); ?>assets/images/camp_logo.png" /></li>
+				<li class="btnMenu" ><a class="borderLeft">PAQUETES</a></li>
+				<li class="btnMenu"><a class="borderLeft" >CONTACTOS</a></li>
+				<li id="lenguageMobil"><a>ENGLISH</a></li>
+				<li id="lenguage">
+					<img class="imgLenguage" alt="jungle_camp_logo" src="<?php echo base_url(); ?>assets/images/mx.png" />
+					<img class="imgLenguage"  alt="jungle_camp_logo" src="<?php echo base_url(); ?>assets/images/us.png" />
+				</li>
 			</ul>
 			<!--<a class="circle"><a>-->
-			<a class="register">INSCRIPCIONES CANCUN JUNGLE CAMP</a>
+			
+			<!--<div class="register">
+				a
+			</div>-->
+			
 			<a id="btnMenu" class="btnMenu"><span<i class="fa fa-bars"></i></span></a>
 			
 		</nav>
@@ -74,7 +83,7 @@
 			</div>
 		</section>
 		
-		<section id="camps">
+		<!--<section id="camps">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 camps-content">
 					<div class="campsHeader">
@@ -108,6 +117,79 @@
 						<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
 					</div>
 				</div>
+			</div>
+			
+		</section>-->
+		
+		<section id="camps">
+		
+			<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; height: 320px; overflow: hidden; visibility: hidden;">
+				<!-- Loading Screen -->
+				<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+					<div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+					<div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+				</div>
+				<div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 100%; height: 320px; overflow: hidden;">
+					<div style="display: none;">
+						<div class="campsHeader">
+							<div class="labelCampsHeader">Campamento escolar</div>
+						</div>
+						<div class="campsImages">
+							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
+						</div>
+					</div>
+					<div style="display: none;">
+						<div class="campsHeader">
+							<div class="labelCampsHeader">Campamento escolar</div>
+						</div>
+						<div class="campsImages">
+							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
+						</div>
+					</div>
+					<div style="display: none;">
+						<div class="campsHeader">
+							<div class="labelCampsHeader">Campamento escolar</div>
+						</div>
+						<div class="campsImages">
+							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
+						</div>
+					</div>
+					<div style="display: none;">
+						<div class="campsHeader">
+							<div class="labelCampsHeader">Campamento escolar</div>
+						</div>
+						<div class="campsImages">
+							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
+						</div>
+					</div>
+					<div style="display: none;">
+						<div class="campsHeader">
+							<div class="labelCampsHeader">Campamento escolar</div>
+						</div>
+						<div class="campsImages">
+							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
+						</div>
+					</div>
+					<div style="display: none;">
+						<div class="campsHeader">
+							<div class="labelCampsHeader">Campamento escolar</div>
+						</div>
+						<div class="campsImages">
+							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
+						</div>
+					</div>
+				</div>
+				<!-- Bullet Navigator -->
+				<div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
+					<!-- bullet navigator item prototype -->
+					<div data-u="prototype" style="width:21px;height:21px;">
+						<div data-u="numbertemplate"></div>
+					</div>
+				</div>
+				<!-- Arrow Navigator -->
+				<span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+				<span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
+			
 			</div>
 			
 		</section>
@@ -238,8 +320,57 @@
 			</div>
 		</footer>
 		
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxD0i_5oZpoFYP3Issxlr1eYZ5R-3jLBU&callback=initMap"
-			async defer></script>
+		<!-- Button trigger modal -->
+		<button type="button"  id="aaa" class="btn btn-primary btn-lg" >
+			Launch demo modal
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				  </div>
+				  <div class="modal-body">
+					<ul class="nav nav-tabs" role="tablist" >
+						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Descripción </a></li>
+						<li role="presentation"><a href="#observations" aria-controls="observations" role="tab" data-toggle="tab">Observaciones</a></li>
+						<li role="presentation"><a href="#map" aria-controls="map" role="tab" data-toggle="tab">Mapa</a></li>
+						<li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video</a></li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="description">
+							En Cancún Jungle Camp se vive una experiencia única llena de emociones, diversión y aprendizaje.</br>
+							El campamento ha sido cuidadosamente diseñado; buscando complementar en el acampador las necesidades de crecimiento personal y social, así como la integración al grupo escolar.</br>
+							Eso lo logramos de una manera muy divertida, sana y tomando en cuenta su espíritu aventurero. escolares</br>
+							Este campamento va dirigido a niños de 6 a 12 años, a adolescentes de 13 a 16 años y a jóvenes de 17 a 20 años.</br>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="observations">
+							Incluye:</br>
+							Confortables Cabañas con ventiladores.</br>
+							Alimentación Rica y Balanceada.    </br>
+							1 consejero (a) por cada 8 o10 personas.</br>
+							Directivos del camp.</br>
+							Pool Party    </br>
+							Programa y material de actividades coordinadas.</br>
+							Dinámicas de integración </br>
+							Paramédicos las 24 hrs. del día.
+						</div>
+						<div role="tabpanel" class="tab-pane" id="map">c</div>
+						<div role="tabpanel" class="tab-pane" id="video">d</div>
+					  </div>
+					</div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
   </body>
 </html>
 		
@@ -264,5 +395,9 @@
 		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/home.js"></script>
 		
 		<script type="text/javascript" src="<?php echo base_url() ?>assets/js/slider/slider.js"></script>
+		
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxD0i_5oZpoFYP3Issxlr1eYZ5R-3jLBU&callback=initMap"
+			async defer></script>
+		
 		
 </html>

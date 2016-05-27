@@ -57,3 +57,68 @@ jQuery(document).ready(function ($) {
             $(window).bind("orientationchange", ScaleSlider);
             //responsive code end
         });
+		
+		
+		
+/**********************************/
+/***************slider 2***********/
+
+jQuery(document).ready(function ($) {
+	sliderMultiGallery();
+});
+		
+function sliderMultiGallery(){
+	
+			var intW = $(window).width();
+			var midH4 = intW / 4
+			
+			var nunSlider = 4;
+			
+			if(  intW >= 768 &&  intW <= 1199 ){
+				nunSlider = 2;
+				midH4 = intW / 2;
+			}else if(intW <= 767){
+				nunSlider = 1;
+				midH4 = intW;
+			}
+			
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $AutoPlaySteps: 1,
+              $SlideDuration: 250,
+              $SlideWidth: midH4,
+              $SlideSpacing: 15,
+              $Cols: nunSlider,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,
+                $Steps: 1
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $SpacingX: 1,
+                $SpacingY: 1
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, intW);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+      
+	
+}

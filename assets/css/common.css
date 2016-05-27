@@ -22,59 +22,51 @@ body{
 * @todo mene principal de la pagina
 */
 nav{
-	position:relative;
+	position:absolute;
 	float:left;
 	background:#3a2313;
 	width:100%;
 	height:100px;
+	z-index:100;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
+	position:relative;
+	list-style-type: none;
+	margin: 0;
     padding: 0;
-    overflow: hidden;
-	width:65%;
-	margin-left:17.5%;
-	float:left;
-	text-align:center;
 	height:100px;
-	padding-right:0;
-	margin-right:0;
-	background-color:#405964;
-	display:table;
+	width:80%;
+	margin-left:12%;
+	
 }
 
 nav ul li {
-    
-	background:none;
-	cursor:pointer;
-	width:16.67%;
-	/*height:100px;*/
-	background:#442467;
-	display: table-cell;
-	vertical-align: middle;
-	padding:0;
+	width:13%;
+	float:left;
+	position:relative;
+	height:100px;
 }
 
 nav ul li a {
-	
-	color:#FFFFFF;
-	background:none;
-	font-size: 1.1rem;
-    font-weight: bold;
-	padding: 10px 5px;
-	/*margin:20px 0px;*/
-	/*margin-bottom:17px;*/
-	border-right:1px solid #FFFFFF;
-	background:#892135;
+	position:relative;
+	float:left;
 	width:100%;
+	color:#FFFFFF;
+	border-right:1px solid #FFFFFF;
+	text-align:center;
+	padding: 10px 0px;
+	margin-top:30px;
+	font-size: 1.1rem;
+	
 }
 
-nav ul li a.double {
-	margin-top:17px;
-	padding-bottom:0px;
+.borderLeft{
+	border-left:1px solid #FFFFFF;
+	border-right:0;
 }
+
+
 
 nav ul li:hover {
 	background:#f29b31;
@@ -89,44 +81,53 @@ nav ul li.active a {
 	border:none;
 }
 
-nav ul li a.noBorder {
-	border:none;
-}
-
-nav ul li:last-child a {
-	border:none;
-}
-
 nav ul li:hover a {
 	border:none;
 }
 
-.circle {
-	position:absolute;
-	left:45.3%;
-	top:70px;
-	width: 126px;
-	width: 126px;
-	height: 75px;
-	background: #3a2313;
-	-moz-border-radius: 0 0 126px 126px;
-	-webkit-border-radius: 0 0 126px 126px;
-	border-radius: 0 0 126px 126px;
-	/*margin-top:40px;*/
+nav ul li#divCircle{
+	width:15%;
+	height:200%;
+	background: url(../images/circle-256.png) center center no-repeat;
+	background-size: 100%;
+	background-position: center 15px;
 }
 
-nav a.register{
-	background:#f29b31;
-	float:right;
-	width:17.5%;
-	height:100%;
-	color:#FFFFFF;
-	font-size:1.4rem;
-	font-weight: bold;
-	padding: 18px 20px;
-	text-align:center;
-	cursor:pointer;
+nav ul li .img-responsive{
+    display: block;
+    max-width: 80%;
+    height: auto;
+	margin-left:10%;
 }
+
+nav ul li#lenguage{
+	width:20%;
+	height:100%;
+	text-align:center;
+}
+
+nav ul li#lenguage:hover{
+	background:none;
+}
+
+.imgLenguage{
+	margin-top:25px;
+}
+
+.imgLenguage:first-child{
+	margin-right:5%;
+}
+
+.circle{
+	width: 100px;
+     height: 100px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #5cb85c;
+	margin-top:50px;
+}
+
 
 a:hover {
 	text-decoration: none;
@@ -137,6 +138,18 @@ nav a.btnMenu{
 	display:none;
 }
 
+.lenguage{
+	position:relative;
+	float:right;
+	width:10%;
+	height:100px;
+	background:#895634;
+}
+
+nav ul li#lenguageMobil{
+		display:none;
+}
+
 /**
 * @section nav medias query table
 * @todo estilos para el menu en las tabletas
@@ -144,33 +157,34 @@ nav a.btnMenu{
 @media (min-width: 768px  ) and (max-width: 1199px){
 	
 	nav ul {
-		width:80%;
-		margin-left:0;
+		width:100%;
+		margin-left:0%;
 	}
 	
 	nav ul li {
-		width:16.66%;
+		width:14%;
 	}
 	
-	nav a.register{
-		width:20%;
-		padding: 16px 15px;
-	}
-	
-	nav ul li a.noBorder {
-		border-right:1px solid #FFFFFF;
-	}
-	
-	nav ul li:last-child a {
-		border:none;
-	}
 	
 	nav a.btnMenu{
 		display:none;
 	}
 	
-	#divCircle{
-		display:none;
+	nav ul li#lenguage{
+		width:15%;
+		height:100%;
+		text-align:center;
+	}
+	
+	.imgLenguage{
+		width:40%;
+		float:left;
+	}
+	
+	
+	
+	nav ul li#divCircle{
+		width:15%;
 	}
 }
 
@@ -182,6 +196,7 @@ nav a.btnMenu{
 	
 	nav{
 		height:50px;
+		position:relative;
 	}
 	
 	nav a.register{
@@ -246,6 +261,14 @@ nav a.btnMenu{
 		border:none;
 	}
 	
+	nav ul li#lenguage{
+		display:none;
+	}
+	
+	nav ul li#lenguageMobil{
+		display:inline;
+	}
+	
 }
 
 /**
@@ -263,6 +286,7 @@ nav a.btnMenu{
 	float:left;
 	margin-top:-50px;
 	margin-bottom:50px;
+	width:100%;
 }
 
 .camps-content{
@@ -713,8 +737,8 @@ textarea.form-contact {
 	
 }
 
-
-
-
-
-
+#prueba{
+	position:relative;
+	float:left;
+	width:100%;
+}
