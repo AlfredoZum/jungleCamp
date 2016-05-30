@@ -21,7 +21,7 @@ body{
 * @section nav
 * @todo mene principal de la pagina
 */
-nav{
+nav.toolBarMenu{
 	position:absolute;
 	float:left;
 	background:#3a2313;
@@ -30,7 +30,7 @@ nav{
 	z-index:100;
 }
 
-nav ul {
+nav.toolBarMenu ul {
 	position:relative;
 	list-style-type: none;
 	margin: 0;
@@ -41,14 +41,14 @@ nav ul {
 	
 }
 
-nav ul li {
+nav.toolBarMenu ul li {
 	width:13%;
 	float:left;
 	position:relative;
 	height:100px;
 }
 
-nav ul li a {
+nav.toolBarMenu ul li a {
 	position:relative;
 	float:left;
 	width:100%;
@@ -68,45 +68,47 @@ nav ul li a {
 
 
 
-nav ul li:hover {
+nav.toolBarMenu ul li:hover {
 	background:#f29b31;
 }
 
-nav ul li.active {
+nav.toolBarMenu ul li.active {
 	background:#f29b31;
 }
 
-nav ul li.active a {
+nav.toolBarMenu ul li.active a {
 	background:#f29b31;
 	border:none;
 }
 
-nav ul li:hover a {
+nav.toolBarMenu ul li:hover a {
 	border:none;
 }
 
-nav ul li#divCircle{
+nav.toolBarMenu ul li#divCircle{
 	width:15%;
+	
 	height:200%;
 	background: url(../images/circle-256.png) center center no-repeat;
 	background-size: 100%;
 	background-position: center 15px;
+	background-color:#457664;
 }
 
-nav ul li .img-responsive{
+nav.toolBarMenu ul li .img-responsive{
     display: block;
     max-width: 80%;
     height: auto;
 	margin-left:10%;
 }
 
-nav ul li#lenguage{
+nav.toolBarMenu ul li#lenguage{
 	width:20%;
 	height:100%;
 	text-align:center;
 }
 
-nav ul li#lenguage:hover{
+nav.toolBarMenu ul li#lenguage:hover{
 	background:none;
 }
 
@@ -134,7 +136,7 @@ a:hover {
 	color:#FFFFFF;
 } 
 
-nav a.btnMenu{
+nav.toolBarMenu a.btnMenu{
 	display:none;
 }
 
@@ -146,31 +148,51 @@ nav a.btnMenu{
 	background:#895634;
 }
 
-nav ul li#lenguageMobil{
+nav.toolBarMenu ul li#lenguageMobil{
 		display:none;
 }
 
+@media (min-width: 1200px) {
+
+	nav.toolBarMenu ul li#divCircle{
+		width:15%;
+	
+		height:250%;
+		background: url(../images/circle-256.png) center center no-repeat;
+		background-size: 100%;
+		background-position: center -10px;
+	}
+	
+	nav.toolBarMenu ul li .img-responsive{
+		display: block;
+		max-width: 70%;
+		height: auto;
+		margin-left:15%;
+	}
+
+}
+
 /**
-* @section nav medias query table
+* @section nav.toolBarMenu medias query table
 * @todo estilos para el menu en las tabletas
 */
-@media (min-width: 768px  ) and (max-width: 1199px){
+@media (min-width: 768px  ) and (max-width: 991px){
 	
-	nav ul {
+	nav.toolBarMenu ul {
 		width:100%;
 		margin-left:0%;
 	}
 	
-	nav ul li {
+	nav.toolBarMenu ul li {
 		width:14%;
 	}
 	
 	
-	nav a.btnMenu{
+	nav.toolBarMenu a.btnMenu{
 		display:none;
 	}
 	
-	nav ul li#lenguage{
+	nav.toolBarMenu ul li#lenguage{
 		width:15%;
 		height:100%;
 		text-align:center;
@@ -183,7 +205,7 @@ nav ul li#lenguageMobil{
 	
 	
 	
-	nav ul li#divCircle{
+	nav.toolBarMenu ul li#divCircle{
 		width:15%;
 	}
 }
@@ -194,12 +216,12 @@ nav ul li#lenguageMobil{
 */
 @media (max-width: 767px){
 	
-	nav{
+	nav.toolBarMenu{
 		height:50px;
 		position:relative;
 	}
 	
-	nav a.register{
+	nav.toolBarMenu a.register{
 		float:right;
 		width:70%;
 		font-size:1.1rem;
@@ -207,7 +229,7 @@ nav ul li#lenguageMobil{
 		padding: 10px 10px;
 	}
 	
-	nav a.btnMenu{
+	nav.toolBarMenu a.btnMenu{
 		position:relative;
 		float:left;
 		background:#f29b31;
@@ -219,11 +241,11 @@ nav ul li#lenguageMobil{
 		cursor:pointer;
 	}
 	
-	nav a.btnMenu:active{
+	nav.toolBarMenu a.btnMenu:active{
 		background:#c17c27;
 	}
 	
-	nav ul.nav-content{
+	nav.toolBarMenu ul.nav-content{
 		display:none;
 		width: 80%;
 		height:auto;
@@ -240,7 +262,7 @@ nav ul li#lenguageMobil{
 		display:none;
 	}
 	
-	nav ul li {
+	nav.toolBarMenu ul li {
 		float: left;
 		background:none;
 		cursor:pointer;
@@ -253,7 +275,7 @@ nav ul li#lenguageMobil{
 		border-bottom: none;
 	}
 
-	nav ul li a {
+	nav.toolBarMenu ul li a {
 		font-weight: bold;
 		padding: 12px 5px;
 		margin:0;
@@ -261,11 +283,11 @@ nav ul li#lenguageMobil{
 		border:none;
 	}
 	
-	nav ul li#lenguage{
+	nav.toolBarMenu ul li#lenguage{
 		display:none;
 	}
 	
-	nav ul li#lenguageMobil{
+	nav.toolBarMenu ul li#lenguageMobil{
 		display:inline;
 	}
 	
@@ -741,4 +763,101 @@ textarea.form-contact {
 	position:relative;
 	float:left;
 	width:100%;
+}
+
+
+
+/******************paquetes****************/
+#namePaquete{
+	position:relative;
+	float:left;
+	width:100%;
+	font-size:16px;
+	margin-top:100px;
+}
+
+#content-hearderPaquete{
+	position:relative;
+	float:left;
+	width:100%;
+	height:150px;
+	background:#f29b31;
+	text-transform:uppercase;
+	font-size:4rem;
+	color:#ffffff;
+	padding: 25px 0px;
+	
+	padding-top:75px;
+	padding-left:190px;
+	margin-bottom:25px;
+}
+
+.packageBody{
+	margin-bottom:30px;
+}
+
+.content-Package.right{
+	float:right;
+}
+
+.content-Package.left{
+	float:left;
+}
+
+.content-Package .imgPackage{
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+.content-Package .imgPackage img{
+	width:100%;
+}
+
+.content-Package .labelPackage{
+	position:relative;
+	float:left;
+	width:100%;
+	text-align:center;
+	font-size:1.2rem;
+	margin-top:10px;
+}
+
+.content-Package .buttomPackage{
+	position:relative;
+	float:left;
+	width:100%;
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.btn-package{
+	background:#f29b31;
+	color:#FFFFFF;
+	font-size: 16px;
+    padding: 8px 24px;
+}
+
+.pagination>li>a, .pagination>li>span {
+	background:#f29b31;
+	color:#FFFFFF;
+	margin: 0px 3px;
+}
+
+
+@media (max-width: 767px){
+	
+	#namePaquete{
+		margin-top:0px;
+	}
+
+	#content-hearderPaquete{
+		padding-left:16px;
+	}
+	
+	.packageBody{
+		margin-left:0px;
+	}
+	
 }

@@ -1,0 +1,114 @@
+/**
+* @style       Standard Layout
+* @media       screen
+* @version     1.0
+* @author      Alfredo Zym
+* @copyright   OrvelSoft 2017
+* @licensor   	open source
+* @layout      in pixels:
+*              |            788            |
+*              | 10  |      768       | 10 |
+*              | 10  | 27 |    741    | 10 |
+*/
+
+@font-face {
+    font-family: "oswald";
+    src: url(oswald.regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "oswaldBold";
+    src: url(oswald.bold.ttf) format("truetype");
+}
+
+*{
+	font-family: "oswald";
+}
+
+html{
+	font-family: "oswald";
+}
+
+body{
+	background:#3a2313;
+	font-family: "oswald";
+}
+
+.row {
+    margin-right: 0;
+    margin-left: -15px;
+}
+
+#login{
+	margin-top:5%;
+}
+
+#login .row #content{
+	background:#f29b31;
+	padding-right: 0;
+}
+
+#MyAccount{
+	position:relative;
+	float:left;
+	width:100%;
+	color:#FFFFFF;
+	font-size:3rem;
+	text-align:center;
+	font-family: "oswaldBold";
+	padding-top:16px;
+	background:#f29b31;
+}
+
+
+#bodyLogin{
+	position:relative;
+	float;left;
+	min-height:200px;
+	margin-top:25px;
+	background:#FFFFFF;
+}
+
+#imgLogo{
+	text-align:center;
+}
+
+#logo{
+	width:20%;
+}
+
+
+.btn-login{
+	border-radius:0px;
+	background:#f29b31;
+	color:#FFFFFF;
+}
+
+.formLogin{
+	padding: 5px 100px;
+}
+
+.formLoginBTN{
+	padding: 5px 25%;
+}
+
+.form-group label{
+	color:#3a2313;
+	font-family: "oswald";
+}
+
+.form-group input{
+	color:#3a2313;
+	font-family: "oswald";
+	height:40px;
+}
+
+.form-group input:placeholder{
+	color:#3a2313;
+	font-family: "oswald";
+}
+
+/**
+* @section nav
+* @todo mene principal de la pagina
+*/

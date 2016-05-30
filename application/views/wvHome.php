@@ -14,14 +14,14 @@
 		
     </head>
     <body>
-		<nav>
+		<nav class="toolBarMenu">
 			<ul class="nav-content">
-				<li class="active"><a >CAMPAMENTOS</a></li>
-				<li class="btnMenu"><a class="">¿QUIENES SOMOS?</a></li>
-				<li class="btnMenu"><a class="">GALERIA</a></li>
+				<li class="btnMenu active" attr_id="camps"><a >CAMPAMENTOS</a></li>
+				<li class="btnMenu" attr_id="AboutUs"><a class="">¿QUIENES SOMOS?</a></li>
+				<li class="btnMenu" attr_id="galleryCamp"><a class="">GALERIA</a></li>
 				<li id="divCircle"><img class="img-responsive" alt="jungle_camp_logo" src="<?php echo base_url(); ?>assets/images/camp_logo.png" /></li>
-				<li class="btnMenu" ><a class="borderLeft">PAQUETES</a></li>
-				<li class="btnMenu"><a class="borderLeft" >CONTACTOS</a></li>
+				<li class="btnMenu " attr_id="package" ><a class="borderLeft">PAQUETES</a></li>
+				<li class="btnMenu" attr_id="contactCamp"><a class="borderLeft" >CONTACTOS</a></li>
 				<li id="lenguageMobil"><a>ENGLISH</a></li>
 				<li id="lenguage">
 					<img class="imgLenguage" alt="jungle_camp_logo" src="<?php echo base_url(); ?>assets/images/mx.png" />
@@ -47,21 +47,21 @@
 						<div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
 								top: 0px; left: 0px; width: 100%; height: 100%;">
 						</div>
-						<div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+						<div style="position: absolute; display: block; background: url(assets/images/loading.gif) no-repeat center center;
 							top: 0px; left: 0px; width: 100%; height: 100%;">
 						</div>
 					</div>
 					<!-- Slides Container -->
 					<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
-						<div>
-							<img u="image" src2="<?php echo base_url(); ?>assets/images/slider/red.jpg" />
-						</div>
-						<div>
-							<img u="image" src2="<?php echo base_url(); ?>assets/images/slider/purple.jpg" />
-						</div>
-						<div>
-							<img u="image" src2="<?php echo base_url(); ?>assets/images/slider/blue.jpg" />
-						</div>
+						<?php
+						foreach($slider as $item){
+							?>
+							<div>
+								<img u="image" src2="<?php echo base_url(); ?>assets/images/slider/<?php echo $item->name; ?>" />
+							</div>
+						<?php
+						}
+						?>
 					</div>
             
 					<!-- bullet navigator container -->
@@ -83,101 +83,29 @@
 			</div>
 		</section>
 		
-		<!--<section id="camps">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 camps-content">
-					<div class="campsHeader">
-						<div class="labelCampsHeader">Campamento escolar</div>
-					</div>
-					<div class="campsImages">
-						<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 camps-content">
-					<div class="campsHeader">
-						<div class="labelCampsHeader">Campamentos padre e hijos</div>
-					</div>
-					<div class="campsImages">
-						<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 camps-content">
-					<div class="campsHeader">
-						<div class="labelCampsHeader">Campamento escolar</div>
-					</div>
-					<div class="campsImages">
-						<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 camps-content">
-					<div class="campsHeader">
-						<div class="labelCampsHeader">Campamentos padre e hijos</div>
-					</div>
-					<div class="campsImages">
-						<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-					</div>
-				</div>
-			</div>
-			
-		</section>-->
-		
 		<section id="camps">
 		
 			<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; height: 320px; overflow: hidden; visibility: hidden;">
 				<!-- Loading Screen -->
 				<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
 					<div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-					<div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+					<div style="position:absolute;display:block;background:url('assets/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
 				</div>
 				<div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 100%; height: 320px; overflow: hidden;">
-					<div style="display: none;">
-						<div class="campsHeader">
-							<div class="labelCampsHeader">Campamento escolar</div>
+					<?php
+					foreach($camp as $item){
+						?>
+						<div style="display: none;" class="btnCamp" id="<?php echo $item->id; ?>">
+							<div class="campsHeader">
+								<div class="labelCampsHeader"><?php echo $item->name; ?></div>
+							</div>
+							<div class="campsImages">
+								<img src="<?php echo base_url(); ?>assets/images/camp/<?php echo $item->image; ?>" /> 
+							</div>
 						</div>
-						<div class="campsImages">
-							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-						</div>
-					</div>
-					<div style="display: none;">
-						<div class="campsHeader">
-							<div class="labelCampsHeader">Campamento escolar</div>
-						</div>
-						<div class="campsImages">
-							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-						</div>
-					</div>
-					<div style="display: none;">
-						<div class="campsHeader">
-							<div class="labelCampsHeader">Campamento escolar</div>
-						</div>
-						<div class="campsImages">
-							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-						</div>
-					</div>
-					<div style="display: none;">
-						<div class="campsHeader">
-							<div class="labelCampsHeader">Campamento escolar</div>
-						</div>
-						<div class="campsImages">
-							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-						</div>
-					</div>
-					<div style="display: none;">
-						<div class="campsHeader">
-							<div class="labelCampsHeader">Campamento escolar</div>
-						</div>
-						<div class="campsImages">
-							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-						</div>
-					</div>
-					<div style="display: none;">
-						<div class="campsHeader">
-							<div class="labelCampsHeader">Campamento escolar</div>
-						</div>
-						<div class="campsImages">
-							<img src="<?php echo base_url(); ?>assets/images/camp/camp1.jpg" /> 
-						</div>
-					</div>
+					<?php
+					}
+					?>
 				</div>
 				<!-- Bullet Navigator -->
 				<div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
@@ -244,12 +172,12 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gallery-body" >
 					<div class="row">
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 galleryContent" >
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 galleryContent" id="activity">
 							<div class="galleryCircle">
 								<p>INSTALACIONES</p>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 galleryContent" >
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 galleryContent" id="installation" >
 							<div class="galleryCircle">
 								<p>ACTIVIDADES</p>
 							</div>
@@ -319,11 +247,6 @@
 				</div>
 			</div>
 		</footer>
-		
-		<!-- Button trigger modal -->
-		<button type="button"  id="aaa" class="btn btn-primary btn-lg" >
-			Launch demo modal
-		</button>
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -337,39 +260,127 @@
 					<ul class="nav nav-tabs" role="tablist" >
 						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Descripción </a></li>
 						<li role="presentation"><a href="#observations" aria-controls="observations" role="tab" data-toggle="tab">Observaciones</a></li>
-						<li role="presentation"><a href="#map" aria-controls="map" role="tab" data-toggle="tab">Mapa</a></li>
+						<li role="presentation"><a href="#map2" aria-controls="map2" role="tab" data-toggle="tab">Mapa</a></li>
 						<li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video</a></li>
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="description">
-							En Cancún Jungle Camp se vive una experiencia única llena de emociones, diversión y aprendizaje.</br>
-							El campamento ha sido cuidadosamente diseñado; buscando complementar en el acampador las necesidades de crecimiento personal y social, así como la integración al grupo escolar.</br>
-							Eso lo logramos de una manera muy divertida, sana y tomando en cuenta su espíritu aventurero. escolares</br>
-							Este campamento va dirigido a niños de 6 a 12 años, a adolescentes de 13 a 16 años y a jóvenes de 17 a 20 años.</br>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="observations">
-							Incluye:</br>
-							Confortables Cabañas con ventiladores.</br>
-							Alimentación Rica y Balanceada.    </br>
-							1 consejero (a) por cada 8 o10 personas.</br>
-							Directivos del camp.</br>
-							Pool Party    </br>
-							Programa y material de actividades coordinadas.</br>
-							Dinámicas de integración </br>
-							Paramédicos las 24 hrs. del día.
+							
 						</div>
-						<div role="tabpanel" class="tab-pane" id="map">c</div>
-						<div role="tabpanel" class="tab-pane" id="video">d</div>
+						<div role="tabpanel" class="tab-pane" id="map2"></div>
+						<div role="tabpanel" class="tab-pane" id="video">
+							
+						</div>
 					  </div>
 					</div>
 				  <div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary">Enviar solicitud</button>
 				  </div>
 				</div>
 			</div>
 		</div>
+		
+		<!-- Button trigger modal -->
+		
+		
+		<!-- Modal -->
+		<div class="modal fade bs-example-modal-lg" id="modalSlider" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Galleria</h4>
+					</div>
+					<div class="modal-body">
+						<div id="slider2_container" style="visibility: hidden; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden;">
+
+							<!-- Loading Screen -->
+							<div u="loading" style="position: absolute; top: 0px; left: 0px;">
+								<div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+
+								background-color: #000; top: 0px; left: 0px;width: 100%; height:100%;">
+								</div>
+								<div style="position: absolute; display: block; background: url(assets/images/loading.gif) no-repeat center center;
+
+								top: 0px; left: 0px;width: 100%;height:100%;">
+								</div>
+							</div>
+
+							<!-- Slides Container -->
+							<div u="slides" id="sliderModalGallery" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;
+							overflow: hidden;">
+								
+							</div>
+							
+							<!-- Arrow Left -->
+							<span u="arrowleft" class="jssora11l" style="top: 123px; left: 8px;">
+							</span>
+							<!-- Arrow Right -->
+							<span u="arrowright" class="jssora11r" style="top: 123px; right: 8px;">
+							</span>
+							<!--#endregion Arrow Navigator Skin End -->
+							<a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- Modal -->
+		<div class="modal fade bs-example-modal-lg" id="modalSlider2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Galleria</h4>
+					</div>
+					<div class="modal-body">
+						<div id="slider3_container" style="visibility: hidden; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden;">
+
+							<!-- Loading Screen -->
+							<div u="loading" style="position: absolute; top: 0px; left: 0px;">
+								<div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+
+								background-color: #000; top: 0px; left: 0px;width: 100%; height:100%;">
+								</div>
+								<div style="position: absolute; display: block; background: url(assets/images/loading.gif) no-repeat center center;
+
+								top: 0px; left: 0px;width: 100%;height:100%;">
+								</div>
+							</div>
+
+							<!-- Slides Container -->
+							<div u="slides" id="sliderModalGallery2" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;
+							overflow: hidden;">
+								
+							</div>
+							
+							<!-- Arrow Left -->
+							<span u="arrowleft" class="jssora11l" style="top: 123px; left: 8px;">
+							</span>
+							<!-- Arrow Right -->
+							<span u="arrowright" class="jssora11r" style="top: 123px; right: 8px;">
+							</span>
+							<!--#endregion Arrow Navigator Skin End -->
+							<a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
 		
   </body>
 </html>
@@ -377,7 +388,7 @@
 	</body>
 		
         <script>
-        	//var URL_BASE = '<?php echo base_url(); ?>';
+        	var URL_BASE = '<?php echo base_url(); ?>';
     	</script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap/bootstrap.min.js"></script>
